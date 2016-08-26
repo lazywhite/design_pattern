@@ -1,3 +1,6 @@
+/**
+ * PatternType: Creation
+**/
 public class PrototypePatternDemo {
     public static void main(String[] args) {
         try{
