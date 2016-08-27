@@ -1,5 +1,5 @@
 /**
-* PatternType: structure
+* PatternType: Structual
 **/
 import java.util.List;
 import java.util.ArrayList;

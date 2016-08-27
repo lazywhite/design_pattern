@@ -1,5 +1,5 @@
 /**
- * PatternType: Structure
+ * PatternType: Structual
 **/
 public class BridgePatternDemo {
     public static void main(String[] args){
