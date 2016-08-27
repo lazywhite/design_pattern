@@ -1,3 +1,6 @@
+/**
+ * PatternType: Behavior
+ */
 public class ChainPatternDemo{
     public static AbstractLogger getChainOfLoggers(){
         AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
