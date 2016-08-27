@@ -1,3 +1,6 @@
+/**
+ * PatternType: Structure
+ */
 public class CompositePatternDemo {
     public static void main(String[] args){
         Employee CEO = new Employee("John", "CEO", 30000);
