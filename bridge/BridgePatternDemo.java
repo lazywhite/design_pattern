@@ -1,5 +1,12 @@
 /**
  * PatternType: Structual
+ *
+ * Shape
+ *      Circle
+ * 
+ * DrawAPI
+ *      RedCircle
+ *      GreenCircle
 **/
 public class BridgePatternDemo {
     public static void main(String[] args){

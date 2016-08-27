@@ -24,13 +24,14 @@ public class CompositePatternDemo {
         headMarketing.add(clerk2);
 
 
-        System.out.println(CEO);
+        CEO.showInfo();
+//        System.out.println(CEO);
 
-        for (Employee headEmployee: CEO.getSubordinates()){
-            System.out.println("\t" + headEmployee);
-            for (Employee employee: headEmployee.getSubordinates()){
-                System.out.println("\t\t" + employee);
-            }
-        }
+//        for (Employee headEmployee: CEO.getSubordinates()){
+//            System.out.println("\t" + headEmployee);
+//            for (Employee employee: headEmployee.getSubordinates()){
+//                System.out.println("\t\t" + employee);
+//            }
+//        }
     }
 }

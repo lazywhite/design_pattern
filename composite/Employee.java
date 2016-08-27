@@ -29,4 +29,10 @@ public class Employee {
     public String toString(){
         return "Employee: " + name  + " " + dept + " " + salary;
     }
+    public void showInfo(){
+        System.out.println(this);
+        for (Employee employee: subordinates){
+            employee.showInfo();
+        }
+    }
 }
