@@ -1,5 +1,5 @@
 /**
- * PatternType: Creation
+ * PatternType: Build
  * Item: interface 
  *      Burger: abstract class
  *          VegBurger
@@ -13,6 +13,9 @@
  *      getCost()
  *      showItems
  * MealBuilder: return a Meal 
+ *
+ * 使用多个简单对象构建出一个复杂的对象
+ * 将一个复杂的构建与其表现相分离, 使得同样的构建可的得到不同的对象
  *
  *
 **/

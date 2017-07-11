@@ -1,5 +1,10 @@
 /**
  * PatternType: Creation
+ *
+ * 抽象工程就是创建工厂的工厂, 每个工厂都继承同一个抽象类
+ *
+ * 工厂模式适合单一产品链
+ * 抽象工厂模式适合多产品链
 **/
 
 public class AbstractFactoryPatternDemo {

@@ -1,5 +1,7 @@
 /**
  * PatternType: Structual
+ *
+ * 获取对象时, 不新创建一个对象, 而是重新利用一个缓存过的对象
  */
 public class FlyweightPatternDemo{
     private static final String[] colors = {"red", "green", "blue", "white"};

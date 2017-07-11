@@ -1,5 +1,7 @@
 /**
  * PatternType: Structual
+ *
+ * 用树形结构来组合对象, 用来表达部分及整体之间的关系
  */
 public class CompositePatternDemo {
     public static void main(String[] args){

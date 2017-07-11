@@ -20,4 +20,10 @@ public class ShapeMaker {
     public void drawRectangle(){
         rectangle.draw();
     }
+
+    public void drawAllShape(){
+        circle.draw();
+        square.draw();
+        rectangle.draw();
+    }
 }

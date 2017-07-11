@@ -1,8 +1,7 @@
 /**
  * PatternType: Behavioral
  *
- * Access the elements of a collection object in sequential manner without
- * any need to know its underlying representation;
+ * 用于顺序访问集合对象中的元素, 而无需知道集合对象的底层表示
  */
 public class IteratorPatternDemo {
     public static void main(String[] args){

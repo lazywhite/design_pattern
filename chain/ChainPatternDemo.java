@@ -1,5 +1,8 @@
 /**
  * PatternType: Behavior
+ *
+ * 按顺序创建一个类似于套娃的结构对象
+ * 按照规则决定是自己处理还是下一个对象来处理
  */
 public class ChainPatternDemo{
     public static AbstractLogger getChainOfLoggers(){

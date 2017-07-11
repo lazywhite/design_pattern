@@ -1,7 +1,8 @@
 /**
  * Type: Behavioral
- * Instead of putting if check for a null value, Null Object reflects a do 
- * nothing relationship
+ *
+ * 当操作的对象不存在时, 不返回null, 而是返回一个不做任何事情
+ * 的对象
  */
 public class NullPatternDemo {
     public static void main(String[] args){
