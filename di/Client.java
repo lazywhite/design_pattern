@@ -4,7 +4,11 @@
  * Distributed under terms of the MIT license.
  */
 
-/* 1. 构造注入 */
+/* 1. 构造注入 
+ *
+ *  好处: 可以保证注入的值合法(不为null)
+ *  缺点: 依赖改变时代码不灵活 
+ * */
 //public class Client {
 
 //    public Client(Service service) {
@@ -15,7 +19,12 @@
 //
 //
 //
-/* 2. Setter 注入 */
+/* 2. Setter 注入 
+ * 好处: 灵活度高
+ * 缺点: 无法保证所有的依赖同时可用
+ *
+ * */
+
 //public void setService(Service service) {
      Save the reference to the passed-in service inside this client
 //    this.service = service;
