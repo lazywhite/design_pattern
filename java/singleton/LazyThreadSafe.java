@@ -3,6 +3,7 @@
  * Copyright (C) 2017 white <white@localhost>
  *
  * Distributed under terms of the MIT license.
+ * 懒汉式
  * 线程安全版, 可以按需创建, 但效率低下
  */
 
@@ -21,7 +22,7 @@ class Singleton {
     }
 }
 
-public class  ST3{
+public class  LazyThreadSafe {
     public static void main(String[] args){
         Singleton s1 = Singleton.getSingleton();
         Singleton s2 = Singleton.getSingleton();
