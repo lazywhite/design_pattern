@@ -7,7 +7,7 @@ abstract factory
 singleton
 builder
 prototype
-dependency injection
+dependency injection(IoC invert of control的一种)
 ```
 
 ## 2. behavior
@@ -17,6 +17,7 @@ dependency injection
 command
 mediator
 observer
+strategy
 ```
 ## 3. structure
 
