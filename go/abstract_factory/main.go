@@ -8,98 +8,61 @@ import (
 通过类工厂来创造工厂, 再通过工厂来创造实例
 */
 
-type Color interface {
-	Fill()
-}
-
-type Shape interface {
-	Draw()
-}
-
-type Circle struct {
-}
-type Square struct {
-}
-type Red struct {
-}
-type Black struct {
-}
-
-func (c *Circle) Draw() {
-	fmt.Println("a circle")
-}
-func (s *Square) Draw() {
-	fmt.Println("a square")
-}
-
-func (r *Red) Fill() {
-	fmt.Println("red")
-}
-func (b *Black) Fill() {
-	fmt.Println("black")
+type Shoes interface {
+	getColor() string
 }
 
 type Factory interface {
-	Get(string) interface{}
-}
-type ShapeFactory struct {
-}
-type ColorFactory struct {
+	makeShoes() Shoes
 }
 
-type AbstractFactory struct {
+type AdidasShoes struct {
+	color string
 }
 
-func (a *AbstractFactory) GetFactory(category string) Factory {
-	var f Factory
-	switch category {
-	case "color":
-		f = new(ColorFactory)
-	case "shape":
-		f = new(ShapeFactory)
+func (a AdidasShoes) getColor() string {
+	return a.color
+}
+
+type NikeShoes struct {
+	color string
+}
+
+func (a NikeShoes) getColor() string {
+	return a.color
+}
+
+type AdidasFactory struct{}
+
+func (a AdidasFactory) makeShoes() Shoes {
+	return AdidasShoes{
+		color: "red",
 	}
-	return f
 }
 
-func (c *ColorFactory) Get(shape string) interface{} {
-	var r Color
-	switch shape {
-	case "red":
-		r = new(Red)
-	case "black":
-		r = new(Black)
-	default:
-		fmt.Println("no supported")
-		r = nil
+type NikeFactory struct{}
+
+func (a NikeFactory) makeShoes() Shoes {
+	return NikeShoes{
+		color: "blue",
 	}
-	return r
 }
 
-func (s *ShapeFactory) Get(shape string) interface{} {
-	var r Shape
-	switch shape {
-	case "circle":
-		r = new(Circle)
-	case "square":
-		r = new(Square)
-	default:
-		fmt.Println("no supported")
-		r = nil
+func GetFactory(name string) Factory {
+	switch name {
+	case "nike":
+		return NikeFactory{}
+	case "adidas":
+		return AdidasFactory{}
 	}
-	return r
+	return nil
 }
 
 func main() {
-	af := new(AbstractFactory)
-	cf := af.GetFactory("color")
-	color := cf.Get("red")
-
-	if v, ok := color.(Color); ok {
-		v.Fill()
-	}
-	sf := af.GetFactory("shape")
-	shape := sf.Get("circle")
-	if v, ok := shape.(Shape); ok {
-		v.Draw()
-	}
+	f1 := GetFactory("nike")
+	shoes1 := f1.makeShoes()
+	fmt.Println(shoes1.getColor())
+	f2 := GetFactory("adidas")
+	shoes2 := f2.makeShoes()
+	fmt.Println(shoes2.getColor())
 }

@@ -36,6 +36,6 @@ func NewInstance(name string) *Instance {
 func main() {
 	inst1 := NewInstance("bob")
 	inst2 := NewInstance("alice")
-	fmt.Println("inst1: %v", inst1)
-	fmt.Println("inst2: %v", inst2)
+	fmt.Printf("inst1: %v\n", inst1)
+	fmt.Printf("inst2: %v\n", inst2)
 }

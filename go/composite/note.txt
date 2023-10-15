@@ -1,0 +1,7 @@
+allow composing objects into a tree-like structure and work with it as if it was a regular object
+
+角色
+  component: 提供统一接口
+  leaf: object
+  composite: can have children component
+  client: 

@@ -12,32 +12,30 @@ import "fmt"
 */
 
 type Shape interface {
-	Draw()
+	Draw() string
 }
 type Circle struct {
 	Info string
 }
 
-func (r *Circle) Draw() {
-	fmt.Println("a circle")
+func (c *Circle) Draw() string {
+	return c.Info
 }
 
 type RedBorder struct {
 	Shape Shape
 }
 
-func (f *RedBorder) Draw() {
-	f.Shape.Draw()
-	fmt.Println("red border")
+func (f *RedBorder) Draw() string {
+	return fmt.Sprintf("red border %s", f.Shape.Draw())
 }
 
 type Padding struct {
 	Shape Shape
 }
 
-func (p *Padding) Draw() {
-	p.Shape.Draw()
-	fmt.Println("padding 10 px")
+func (p *Padding) Draw() string {
+	return fmt.Sprintf("padding %s", p.Shape.Draw())
 }
 
 func NewRedBorder(s Shape) Shape {
@@ -45,6 +43,7 @@ func NewRedBorder(s Shape) Shape {
 	rb.Shape = s
 	return rb
 }
+
 func NewPadding(s Shape) Shape {
 	p := new(Padding)
 	p.Shape = s
@@ -53,14 +52,15 @@ func NewPadding(s Shape) Shape {
 
 func main() {
 	c := new(Circle)
-	c.Draw()
+	c.Info = "circle"
+	fmt.Println(c.Draw())
 
 	rbc := NewRedBorder(c)
-	rbc.Draw()
+	fmt.Println(rbc.Draw())
 
 	pc := NewPadding(c)
-	pc.Draw()
+	fmt.Println(pc.Draw())
 
 	pbc := NewPadding(rbc)
-	pbc.Draw()
+	fmt.Println(pbc.Draw())
 }

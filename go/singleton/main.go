@@ -2,24 +2,21 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
+
+var lock = &sync.Mutex{}
 
 type Singleton struct {
 }
 
-var instance *Singleton = nil
+var instance *Singleton
 
-/*
-//hungery mode
-func init(){
-
-    instance = new(Singleton)
-}
-*/
-
-//lazy mode
 func GetInstance() *Singleton {
 	if instance == nil {
+		lock.Lock()
+		defer lock.Unlock()
+		fmt.Println("creating instance")
 		instance = new(Singleton)
 	}
 	return instance

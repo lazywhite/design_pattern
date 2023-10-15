@@ -7,8 +7,8 @@ import (
 /*
 1. client无需自己初始化特定类 而是委托给Factory进行初始化
 2. 根据传入参数的不同，Factory可以像工厂一样创建出不同的object
-
 */
+
 type Shape interface {
 	Draw()
 }
@@ -28,6 +28,8 @@ func (c *Square) Draw() {
 type Factory struct {
 }
 
+// 此处使用字符串来决定shape, 也可以用int
+// func (f *Factory) GetShape(type int) Shape {
 func (f *Factory) GetShape(shape string) Shape {
 	var s Shape
 	switch shape {
