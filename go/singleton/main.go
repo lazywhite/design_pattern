@@ -16,8 +16,10 @@ func GetInstance() *Singleton {
 	if instance == nil {
 		lock.Lock()
 		defer lock.Unlock()
-		fmt.Println("creating instance")
-		instance = new(Singleton)
+		if instance == nil {
+			fmt.Println("creating instance")
+			instance = new(Singleton)
+		}
 	}
 	return instance
 }
@@ -27,5 +29,4 @@ func main() {
 	s2 := GetInstance()
 
 	fmt.Println(s1 == s2)
-
 }
